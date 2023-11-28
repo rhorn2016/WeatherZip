@@ -80,6 +80,7 @@ exit_button.pack(side='bottom', pady=10, padx=10, ipadx=20, ipady=10)
 # Global variable for storing weather data
 weather_data_global = {}
 
+
 # Function to load and return the forecast icon
 def load_forecast_icon(url, frame):
     # Code to fetch, convert, and display an image from a URL
@@ -109,6 +110,7 @@ def fetch_weather(zip_code):
     else:
         messagebox.showerror("Error", "Failed to retrieve weather data")
 
+
 # Function to update the weather display
 def update_weather_display(current):
     # Code to update the UI with the current weather data
@@ -133,6 +135,7 @@ def load_weather_icon(url):
     weather_icon_label.config(image=tk_image)
     weather_icon_label.image = tk_image  # Keep a reference
 
+
 # Function to fetch the 3-day forecast from an API
 def fetch_forecast(zip_code):
     # Code to make an API request for the forecast and process the response
@@ -147,6 +150,7 @@ def fetch_forecast(zip_code):
         update_forecast_display(forecast_data['forecast'])
     else:
         messagebox.showerror("Error", "Failed to retrieve forecast data")
+
 
 # Function to update the forecast display
 def update_forecast_display(forecast):

@@ -1,0 +1,58 @@
+WeatherZip User Guide
+
+Prerequisites:
+
+Before using WeatherZip, you must have Python installed on your computer. Additionally, WeatherZip relies on several Python libraries, including Tkinter for the user interface, Requests for fetching weather data, and Pillow (PIL) for image processing.
+
+Required Libraries
+- Tkinter (usually comes with Python)
+- Requests
+- Pillow (PIL)
+
+Installing Libraries with pip:
+Open your command-line interface (CLI) and run the following commands to install the necessary libraries:
+pip install requests
+pip install pillow
+
+
+**Note**: If you have multiple Python versions installed, you might need to use `pip3` instead of `pip`.**Note**
+
+Starting the Application:
+To launch WeatherZip:
+1. Locate the `WeatherZip.py` file on your computer.
+2. Double-click on the file to run the application.
+
+Interface Overview
+
+Upon starting WeatherZip, you will encounter a window with three tabs:
+- Current Weather: The default tab, showing the current weather conditions.
+- 3 Day Forecast: Displays the forecast for the next three days.
+- Widget: A graphical representation of the current weather and upcoming forecast.
+
+Checking the Weather:
+1. Navigate to the "Current Weather" tab.
+2. Enter your zip code in the "Enter Zip Code" field.
+3. Click "Get Weather" to display the current weather.
+
+Viewing the Forecast:
+1. Select the "3 Day Forecast" tab.
+2. View the weather forecast for the next three days, including temperatures and conditions.
+
+Using the Widget:
+1. Click on the "Widget" tab.
+2. View a detailed weather widget with the current conditions and a three-day forecast.
+
+Exiting the Application:
+To close WeatherZip:
+1. Click the "Exit" button found at the bottom of any tab.
+2. The application will close.
+
+Troubleshooting:
+If you encounter issues:
+- Confirm you have an internet connection for fetching weather data.
+- Ensure the zip code entered is valid.
+- Check that all required libraries are installed.
+
+For additional help, consult the Python and Tkinter documentation or the support resources provided with WeatherZip.
+
+With WeatherZip, you're always just a few clicks away from the latest weather updates!

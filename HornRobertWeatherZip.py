@@ -9,7 +9,7 @@ Date: 11/18/2023
 Author: Robert Horn
 '''
 
-# Import required libraries and modules
+# Importing necessary libraries for the application
 import tkinter as tk
 from tkinter import messagebox, ttk
 import requests
@@ -18,22 +18,22 @@ import io
 import urllib
 from datetime import datetime
 
-# Define the API key as a global constant
+# API key for accessing weather data
 API_KEY = '2cdd9eebe6f14125bae205702233110'
 
-# Define colors for UI elements
+# Defining color constants for UI theming
 DARK_BLUE = '#003366'
 LIGHT_BLUE = '#add8e6'
 WHITE = '#ffffff'
 ORANGE = '#FFA500'
 
-# Initialize the main application window
+# Initializing the main application window with configuration
 app = tk.Tk()
 app.title("WeatherZip")
 app.geometry("700x500")
 app.configure(bg=DARK_BLUE)
 
-# Set up the style for the UI elements
+# Configuring styles for the UI elements like tabs, frames, labels, and buttons
 style = ttk.Style()
 style.theme_use('default')
 style.configure('TNotebook.Tab', background=ORANGE, padding=[10, 2])
@@ -41,14 +41,10 @@ style.configure('TFrame', background=DARK_BLUE)
 style.configure('TLabel', background=DARK_BLUE, foreground=WHITE)
 style.configure('TButton', background=LIGHT_BLUE, foreground=WHITE)
 style.configure('Exit.TButton', font=('Helvetica', 14))
-style.configure('TNotebook.Tab', padding=[10, 2])
-
-# Configure tab styles for active and inactive states
-style.map('TNotebook.Tab',
-          background=[('selected', ORANGE), ('!selected', LIGHT_BLUE)],
+style.map('TNotebook.Tab', background=[('selected', ORANGE), ('!selected', LIGHT_BLUE)],
           foreground=[('selected', WHITE), ('!selected', DARK_BLUE)])
 
-# Create and configure the tab control with three tabs
+# Creating tabs for different sections of the application
 tab_control = ttk.Notebook(app)
 current_tab = ttk.Frame(tab_control)
 forecast_tab = ttk.Frame(tab_control)
@@ -58,7 +54,7 @@ tab_control.add(forecast_tab, text='3 Day Forecast')
 tab_control.add(widget_tab, text='Widget')
 tab_control.pack(expand=1, fill="both")
 
-# Add input and output elements to the current weather tab
+# Adding UI elements for user interaction on the current weather tab
 tk.Label(current_tab, text="Enter Zip Code:", background=DARK_BLUE, foreground=WHITE).pack()
 zip_code_entry = tk.Entry(current_tab, background=WHITE)
 zip_code_entry.pack()
@@ -69,15 +65,15 @@ weather_result_label.pack()
 weather_icon_label = tk.Label(current_tab, background=DARK_BLUE)
 weather_icon_label.pack()
 
-# Configure the forecast tab layout
+# Configuring the layout for the forecast tab
 forecast_frame = tk.Frame(forecast_tab, background=DARK_BLUE)
 forecast_frame.pack(side='top', fill='both', expand=True)
 
-# Configure the exit button
+# Configuring the exit button in the application
 exit_button = ttk.Button(app, text="Exit", command=app.destroy, style='Exit.TButton')
 exit_button.pack(side='bottom', pady=10, padx=10, ipadx=20, ipady=10)
 
-# Global variable for storing weather data
+# Global variable to store weather data for access across different functions
 weather_data_global = {}
 
 
